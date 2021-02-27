@@ -3,7 +3,7 @@ var game = {
   canvas: undefined,
   canvasContext: undefined,
   rectanglePosition: 0,
-  background: undefined,
+  backgroundRect: undefined,
 };
 
 game.start = function () {
@@ -18,7 +18,7 @@ game.update = function () {
 };
 
 game.draw = function () {
-  game.canvasContext.fillStyle = game.background();
+  game.canvasContext.fillStyle = game.backgroundRect();
   game.canvasContext.fillRect(game.rectanglePosition, 100, 50, 50);
 };
 
@@ -33,7 +33,7 @@ game.mainLoop = function () {
   window.setTimeout(game.mainLoop, 5000 / 60);
 };
 
-game.background = function () {
+game.backgroundRect = function () {
   var x = Math.floor(Math.random() * 256);
   var y = Math.floor(Math.random() * 256);
   var z = Math.floor(Math.random() * 256);
