@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, lightblue, rgb(216, 215, 223));
+  }
+  .container {
+    width: 800px;
+    height: 500px;
+  }
+  #mycanvas {
+    width: 800px;
+    height: 500px;
+    border: 2px solid black;
+    background: linear-gradient(to bottom, lightblue, rgb(193, 194, 166));
+  }
+  
