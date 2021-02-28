@@ -1,31 +1,31 @@
-var Game = {
+var game = {
   canvas: undefined,
   ctx: undefined,
   characterSprite: undefined,
 };
 
-Game.start = function () {
-  Game.canvas = document.getElementById("mycanvas");
-  Game.ctx = Game.canvas.getContext("2d");
-  Game.characterSprite = new Image();
-  Game.characterSprite.src = "assets/character/player.png";
-  Game.mainLoop();
+game.start = function () {
+  game.canvas = document.getElementById("mycanvas");
+  game.ctx = game.canvas.getContext("2d");
+  game.characterSprite = new Image();
+  game.characterSprite.src = "assets/character/player.png";
+  game.mainLoop();
 };
 
-Game.mainLoop = function () {
-  Game.draw();
-  window.setTimeout(Game.mainLoop, 5000 / 60);
+game.mainLoop = function () {
+  game.draw();
+  window.setTimeout(game.mainLoop, 5000 / 60);
 };
 
-Game.draw = function () {
-  Game.drawImage(Game.characterSprite, { x: 1, y: 1 });
+game.draw = function () {
+  game.drawImage(game.characterSprite, { x: 1, y: 1 });
 };
 
-Game.drawImage = function (sprite, position) {
-  Game.ctx.save();
-  Game.ctx.translate(position.x, position.y);
-  Game.ctx.drawImage(sprite, 0, 0, 230, 160);
-  Game.ctx.restore();
+game.drawImage = function (sprite, position) {
+  game.ctx.save();
+  game.ctx.translate(position.x, position.y);
+  game.ctx.drawImage(sprite, 0, 0, 230, 160);
+  game.ctx.restore();
 };
 
-document.addEventListener("DOMContentLoaded", Game.start);
+document.addEventListener("DOMContentLoaded", game.start);
